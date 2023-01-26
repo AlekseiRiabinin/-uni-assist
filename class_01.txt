@@ -1,0 +1,3 @@
+math;Bill Gates:2 2 3 4, Jeff Bezos:4 4 4 4, Elon Musk:2 3 4 5
+calc;Bill Gates:5 4 3 2, Jeff Bezos:3 3 3 4, Elon Musk:4 4 4 4
+anal;Bill Gates:3 3 2 2, Jeff Bezos:5 5 4 4, Elon Musk:2 2 2 2
