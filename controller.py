@@ -1,29 +1,34 @@
-import view
-import model
+from view import Console
+from model import Database
 
 def start():
-    model.set_class(view.input_class())
-    model.set_subject(view.input_subject())
-    model.open_file()
+    c = Console()
+    db = Database()
+
+    db.set_class(c.input_class())
+    db.set_subject(c.input_subject())
+    db.open_file()
     
     while True:
-        records = model.get_records()
-        view.list_of_students(records)        
+        subject = db.get_subject()
+        c.module_name(subject)
+        records = db.get_records()
+        c.list_of_students(records)        
         
-        student = view.who_answers()
-        while model.name_checker(student) is False\
+        student = c.who_answers()
+        while db.name_checker(student) is False\
             and student != 'exit':
-            view.alert_name()
-            student = view.who_answers()      
+            c.alert_name()
+            student = c.who_answers()      
         
         if student == 'exit':
             break
 
-        mark = int(view.what_mark())  
-        while model.mark_checker(mark) is False:            
-            view.alert_mark()
-            mark = int(view.what_mark())   
+        mark = int(c.what_mark())  
+        while db.mark_checker(mark) is False:            
+            c.alert_mark()
+            mark = int(c.what_mark())   
 
-        model.student_mark(student, mark)
+        db.student_mark(student, mark)
     
-    model.save_file()
+    db.save_file()
